@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const errorHandler = require("./middleWare/errorMiddleware");
 
 const userRoute = require("./routes/userRoute");
 
@@ -21,8 +22,10 @@ app.get("/", (req, res) => {
   res.send("Home Page");
 });
 
-const PORT = process.env.PORT || 3000;
+//Error middleware
+app.use(errorHandler);
 
+const PORT = process.env.PORT || 3000;
 //connect to DB
 mongoose.set("strictQuery", false);
 mongoose
