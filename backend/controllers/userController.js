@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs");
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "1d" });
@@ -62,7 +62,7 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 const loginUser = asyncHandler(async (req, res) => {
-  const {email, password} = req.body;
+  const { email, password } = req.body;
 
   //validation
   if (!email || !password) {
@@ -70,7 +70,7 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("Plese add email and password");
   }
 
-  const user = await User.findOne({email});
+  const user = await User.findOne({ email });
 
   if (!user) {
     res.status(400);
@@ -107,7 +107,19 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
+const logout = asyncHandler(async (req, res) => {
+  res.cookie("token", "", {
+    path: "/",
+    httpOnly: true,
+    expires: new Date(0),
+    sameSite: "none",
+    secure: true,
+  });
+  return res.status(200).json({ message: "Successfully Logged Out" });
+});
+
 module.exports = {
   registerUser,
   loginUser,
+  logout,
 };
