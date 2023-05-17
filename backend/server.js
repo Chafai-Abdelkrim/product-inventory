@@ -5,8 +5,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const errorHandler = require("./middleWare/errorMiddleware");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 
 const userRoute = require("./routes/userRoute");
+const productRoute = require("./routes/productRoute");
 
 const app = express();
 
@@ -18,6 +20,7 @@ app.use(bodyParser.json());
 
 //routes middleware
 app.use("/api/users", userRoute);
+app.use("/api/products", productRoute);
 
 //routes
 app.get("/", (req, res) => {
