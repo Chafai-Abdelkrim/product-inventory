@@ -224,7 +224,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
   //create reset token
   let resetToken = crypto.randomBytes(36).toString("hex") + user._id;
 
-  //Hash toekn before saving to db
+  //Hash token before saving to db
   const hashedToken = crypto
     .createHash("sha256")
     .update(resetToken)
@@ -268,6 +268,10 @@ const forgotPassword = asyncHandler(async (req, res) => {
   }
 });
 
+const resetPassword = asyncHandler(async (req, res) => {
+  res.send("reset password");
+});
+
 module.exports = {
   registerUser,
   loginUser,
@@ -277,4 +281,5 @@ module.exports = {
   updateUser,
   changePassword,
   forgotPassword,
+  resetPassword
 };
