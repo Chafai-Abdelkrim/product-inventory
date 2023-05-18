@@ -18,6 +18,8 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 //routes middleware
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
