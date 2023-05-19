@@ -92,12 +92,18 @@ const deleteProduct = asyncHandler(async (req, res) => {
     throw new Error("User not Authorized");
   }
   await product.deleteOne();
-  res.status(200).json({ message: "Product Deleted!" })
+  res.status(200).json({ message: "Product Deleted!" });
+});
+
+//Update product
+const updateProduct = asyncHandler(async (req, res) => {
+  res.send("product updated");
 });
 
 module.exports = {
   createProduct,
   getProducts,
   getProduct,
-  deleteProduct
+  deleteProduct,
+  updateProduct,
 };
