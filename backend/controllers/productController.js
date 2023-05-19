@@ -3,6 +3,13 @@ const Product = require("../models/productModel");
 const { fileSizeFormatter } = require("../utils/fileUpload");
 const cloudinary = require("cloudinary").v2;
 
+//Cloudinary configuration
+cloudinary.config({
+  cloud_name: "dhsethxhg",
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
 //Create a new Product
 const createProduct = asyncHandler(async (req, res) => {
   const { name, sku, category, quantity, price, description } = req.body;
@@ -16,13 +23,6 @@ const createProduct = asyncHandler(async (req, res) => {
   //Handle image upload
   let fileData = {};
   if (req.file) {
-    //Cloudinary configuration
-    cloudinary.config({
-      cloud_name: "dhsethxhg",
-      api_key: process.env.CLOUDINARY_API_KEY,
-      api_secret: process.env.CLOUDINARY_API_SECRET,
-    });
-
     //save image to cloudinary
     let uploadedFile;
     try {
@@ -97,7 +97,60 @@ const deleteProduct = asyncHandler(async (req, res) => {
 
 //Update product
 const updateProduct = asyncHandler(async (req, res) => {
-  res.send("product updated");
+  const { name, category, quantity, price, description } = req.body;
+  const { id } = req.params;
+
+  const product = await Product.findById(id);
+  if (!product) {
+    res.status(404);
+    throw new Error("Product not found");
+  }
+  //match product to its user
+  if (product.user.toString() !== req.user.id) {
+    res.status(401);
+    throw new Error("User not Authorized");
+  }
+
+  //Handle image upload
+  let fileData = {};
+  if (req.file) {
+    //save image to cloudinary
+    let uploadedFile;
+    try {
+      uploadedFile = await cloudinary.uploader.upload(req.file.path, {
+        folder: "Prod inventory",
+        resource_type: "image",
+      });
+    } catch (error) {
+      res.status(500);
+      throw new Error("Image could not be uploaded");
+    }
+
+    fileData = {
+      fileName: req.file.originalname,
+      filePath: uploadedFile.secure_url,
+      fileType: req.file.mimetype,
+      fileSize: fileSizeFormatter(req.file.size, 2),
+    };
+  }
+
+  const updatedProduct = await Product.findByIdAndUpdate(
+    { _id: id },
+    {
+      name,
+      category,
+      quantity,
+      price,
+      description,
+      image: Object.keys(fileData).length === 0 ? product?.image : fileData,
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
+
+  res.status(200).json(updatedProduct);
 });
 
 module.exports = {
