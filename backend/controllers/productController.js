@@ -20,7 +20,7 @@ const createProduct = asyncHandler(async (req, res) => {
     cloudinary.config({
       cloud_name: "dhsethxhg",
       api_key: process.env.CLOUDINARY_API_KEY,
-      api_secret: process.env.CLOUDINARY_API_SECRET
+      api_secret: process.env.CLOUDINARY_API_SECRET,
     });
 
     //save image to cloudinary
@@ -64,7 +64,13 @@ const getProducts = asyncHandler(async (req, res) => {
   res.status(200).json(products);
 });
 
+//Get a single product
+const getProduct = asyncHandler(async (req, res) => {
+  res.send("product");
+});
+
 module.exports = {
   createProduct,
-  getProducts
+  getProducts,
+  getProduct,
 };
