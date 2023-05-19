@@ -58,6 +58,12 @@ const createProduct = asyncHandler(async (req, res) => {
   res.status(201).json(product);
 });
 
+//Get all products
+const getProducts = asyncHandler(async (req, res) => {
+  res.send("products");
+});
+
 module.exports = {
   createProduct,
+  getProducts
 };
