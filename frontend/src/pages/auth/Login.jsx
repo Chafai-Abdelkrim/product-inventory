@@ -1,3 +1,9 @@
+import styles from './auth.module.scss';
+
+const initialState = {
+    email: "",
+    password: "",
+}
 
 const Login = () => {
     return (
