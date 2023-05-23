@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -15,20 +15,20 @@ function App() {
   useEffect(() => {
     async function loginStatus() {
       const status = await getLoginStatus();
-      dispatch(SET_LOGIN(status))
+      dispatch(SET_LOGIN(status));
     }
     loginStatus();
   }, [dispatch]);
 
   return (
     <BrowserRouter>
-    <ToastContainer />
+      <ToastContainer />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/forgot' element={<Forgot />} />
-        <Route path='/resetpassword/:resetToken' element={<Reset />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/resetpassword/:resetToken" element={<Reset />} />
       </Routes>
     </BrowserRouter>
   );
