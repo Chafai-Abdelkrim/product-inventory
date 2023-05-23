@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import Home from './pages/Home/Home';
 import { SET_LOGIN } from './redux/features/auth/authSlice';
 
 function App() {
