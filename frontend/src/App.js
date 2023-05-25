@@ -8,6 +8,7 @@ import Register from './pages/auth/Register';
 import Forgot from './pages/auth/Forgot';
 import Reset from './pages/auth/Reset';
 import { SET_LOGIN } from './redux/features/auth/authSlice';
+import { getLoginStatus } from './services/authService';
 
 function App() {
   const dispatch = useDispatch();
