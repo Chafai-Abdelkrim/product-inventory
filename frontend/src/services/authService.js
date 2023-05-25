@@ -70,7 +70,7 @@ export const forgotPassword = async (userData) => {
     const response = await axios.post(
       `${BACKEND_URL}/api/users/forgotpassword`,
       userData
-    )
+    );
     toast.success(response.data.message);
   } catch (error) {
     const message =
@@ -79,7 +79,7 @@ export const forgotPassword = async (userData) => {
       error.toString();
     toast.error(message);
   }
-}
+};
 
 //Reset password
 export const resetPassword = async (userData, resetToken) => {
@@ -87,7 +87,7 @@ export const resetPassword = async (userData, resetToken) => {
     const response = await axios.put(
       `${BACKEND_URL}/api/users/resetpassword/${resetToken}`,
       userData
-    )
+    );
     return response.data;
   } catch (error) {
     const message =
@@ -96,7 +96,7 @@ export const resetPassword = async (userData, resetToken) => {
       error.toString();
     toast.error(message);
   }
-}
+};
 
 //Get login status
 export const getLoginStatus = async () => {
@@ -110,7 +110,7 @@ export const getLoginStatus = async () => {
       error.toString();
     toast.error(message);
   }
-}
+};
 
 //Get user profile
 export const getUser = async () => {
@@ -124,4 +124,37 @@ export const getUser = async () => {
       error.toString();
     toast.error(message);
   }
-}
+};
+
+//Update profile
+export const updateUser = async (formData) => {
+  try {
+    const response = await axios.patch(
+      `${BACKEND_URL}/api/users/updateuser`,
+      formData
+    );
+    return response.data;
+  } catch (error) {
+    const message =
+      (error.message && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    toast.error(message);
+  }
+};
+
+export const changePassword = async (formData) => {
+  try {
+    const response = await axios.patch(
+      `${BACKEND_URL}/api/users/changepassword`,
+      formData
+    );
+    return response.data;
+  } catch (error) {
+    const message =
+      (error.message && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    toast.error(message);
+  }
+};
