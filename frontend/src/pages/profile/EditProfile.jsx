@@ -5,7 +5,7 @@ import './Profile.scss';
 import { selectUser } from '../../redux/features/auth/authSlice';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { updateUser } from '../../services/authService';
 import { toast } from 'react-toastify';
 
@@ -33,7 +33,7 @@ const EditProfile = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setProduct({ ...product, [name]: value });
+    setProfile({ ...profile, [name]: value });
   };
 
   const handleImageChange = (e) => {

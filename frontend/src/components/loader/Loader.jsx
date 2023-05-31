@@ -1,3 +1,4 @@
+import React from 'react';
 import { FillingBottle } from 'react-cssfx-loading';
 import "./Loader.scss";
 

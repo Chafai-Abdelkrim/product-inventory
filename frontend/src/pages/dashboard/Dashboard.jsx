@@ -4,7 +4,7 @@ import useRedirectLoggedOutUser from '../../customHook/useRedirectLoggedOutUser'
 import getProducts from '../../redux/features/product/productSlice';
 import ProductSummary from '../../components/product/productSummary/ProductSummary';
 import ProductList from '../../components/product/productList/ProductList';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const Dashboard = () => {
   useRedirectLoggedOutUser('/login');

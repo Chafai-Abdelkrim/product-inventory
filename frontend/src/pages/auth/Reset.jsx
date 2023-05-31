@@ -4,7 +4,7 @@ import Card from '../../components/Card/Card';
 import { resetPassword } from '../../services/authService';
 import { MdPassword } from 'react-icons/md';
 import styles from './auth.module.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const initialState = {
   password: '',

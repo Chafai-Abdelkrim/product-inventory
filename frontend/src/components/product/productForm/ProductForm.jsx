@@ -1,3 +1,4 @@
+import React from 'react';
 import Card from '../../Card/Card';
 import ReactQuill from 'react-quill';
 import './ProductForm.scss';

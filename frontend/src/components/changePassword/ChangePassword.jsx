@@ -3,7 +3,7 @@ import { changePassword } from '../../services/authService';
 import { useNavigate } from 'react-router-dom';
 import Card from '../Card/Card';
 import './ChangePassword.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const initialState = {
   oldPassword: '',

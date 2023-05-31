@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import Card from '../../components/Card/Card';
 import { forgotPassword, validateEmail } from '../../services/authService';

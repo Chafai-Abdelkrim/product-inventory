@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import useRedirectLoggedOutUser from '../../customHook/useRedirectLoggedOutUser';
 import { SET_NAME, SET_USER } from '../../redux/features/auth/authSlice';

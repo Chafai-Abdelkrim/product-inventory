@@ -4,7 +4,7 @@ import { GoLocation } from 'react-icons/go';
 import axios from 'axios';
 import { BACKEND_URL } from '../../services/authService';
 import './Contact.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const Contact = () => {

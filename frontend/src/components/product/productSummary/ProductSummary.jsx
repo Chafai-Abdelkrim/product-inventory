@@ -12,7 +12,7 @@ import {
 } from '../../../redux/features/product/productSlice';
 import InfoBox from '../../infoBox/InfoBox';
 import './ProductSummary.scss';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 //Icons
 const earingIcon = <AiFillDollarCircle size={40} color="#fff" />;

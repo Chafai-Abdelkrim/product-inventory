@@ -9,7 +9,7 @@ import {
   selectProduct,
   updateProduct,
 } from '../../redux/features/product/productSlice';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const EditProduct = () => {
   const { id } = useParams();

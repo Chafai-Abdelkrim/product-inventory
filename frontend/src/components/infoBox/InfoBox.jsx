@@ -1,3 +1,4 @@
+import React from 'react';
 import './InfoBox.scss';
 
 const InfoBox = ({ bgColor, title, count, icon }) => {

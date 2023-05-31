@@ -1,3 +1,4 @@
+import React from 'react';
 import { FaCommentAlt, FaRegChartBar, FaTh } from 'react-icons/fa';
 import { BiImageAdd } from 'react-icons/bi';
 
