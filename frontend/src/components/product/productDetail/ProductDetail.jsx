@@ -31,6 +31,7 @@ const ProductDetail = () => {
     if (isLoggedIn === true) dispatch(getProduct(id));
 
     if (isError) console.log(message);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn, isError, message, dispatch]);
 
   return (

@@ -6,7 +6,6 @@ import './ProductForm.scss';
 const ProductForm = (props) => {
   const {
     product,
-    productImage,
     imagePreview,
     description,
     setDescription,
