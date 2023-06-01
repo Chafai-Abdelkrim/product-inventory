@@ -396,3 +396,105 @@ p {
   color: var(--color-dark);
   margin-right: 1rem;
 }
+
+.--block {
+  display: block;
+}
+.--inline-block {
+  display: inline-block;
+}
+
+.--width-100 {
+  width: 100%;
+}
+
+.--width-500px {
+  width: 500px;
+}
+
+.--line {
+  position: relative;
+}
+.--line::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 3px;
+  margin-bottom: 1rem;
+
+  background: rgb(217, 8, 170);
+  background: linear-gradient(
+    135deg,
+    rgba(163, 1, 191, 1) 44%,
+    rgba(217, 8, 170, 1) 57%
+  );
+}
+
+.--list-style-none {
+  list-style: none;
+}
+
+.--profile-img {
+  width: 6rem;
+  height: 6rem;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+a {
+  font-size: 1.4rem;
+  /* color: var(--dark-blue); */
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+ul {
+  list-style: none;
+}
+
+a:hover {
+  /* color: var(--color-dark); */
+  font-size: 1.5rem;
+}
+
+.ql-editor {
+  min-height: 200px;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+.pagination .page-num {
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: normal;
+  color: #333;
+  border: 1px solid #333;
+  margin: 2px;
+}
+
+.pagination .page-num:hover {
+  color: #fff;
+  background-color: var(--light-blue);
+}
+.activePage {
+  color: #fff;
+  background-color: var(--light-blue);
+  height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .--flex-dir-column {
+    flex-direction: column;
+  }
+}
