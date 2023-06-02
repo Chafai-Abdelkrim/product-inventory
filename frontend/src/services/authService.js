@@ -37,7 +37,7 @@ export const loginUser = async (userData) => {
       `${BACKEND_URL}/api/users/login`,
       userData
     );
-    if (response.statusCode === 'OK') {
+    if (response.statusText === 'OK') {
       toast.success('Login Successful...');
     }
 

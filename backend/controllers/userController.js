@@ -95,7 +95,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
   if (user && passwordIsCorrect) {
     const { _id, name, email, photo, phone, bio } = user;
-    res.status(201).json({
+    res.status(200).json({
       _id,
       name,
       email,
