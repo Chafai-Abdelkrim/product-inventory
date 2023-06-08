@@ -41,10 +41,10 @@ const registerUser = asyncHandler(async (req, res) => {
   const token = generateToken(user._id);
   res.cookie("token", token, {
     path: "/",
-    httpOnly: true,
+    /* httpOnly: true, */
     expires: new Date(Date.now() + 1000 * 86400), // 1 day
-    sameSite: "none",
-    secure: true,
+    /* sameSite: "none", */
+    secure: false,
   });
 
   if (user) {
@@ -85,13 +85,16 @@ const loginUser = asyncHandler(async (req, res) => {
 
   //generate token and send HTTP-only cookie
   const token = generateToken(user._id);
-  res.cookie("token", token, {
-    path: "/",
-    httpOnly: true,
-    expires: new Date(Date.now() + 1000 * 86400), // 1 day
-    sameSite: "none",
-    secure: true,
-  });
+
+  if (passwordIsCorrect) {
+    res.cookie("token", token, {
+      path: "/",
+      /* httpOnly: true, */
+      expires: new Date(Date.now() + 1000 * 86400), // 1 day
+      /* sameSite: "none", */
+      secure: false,
+    });
+  }
 
   if (user && passwordIsCorrect) {
     const { _id, name, email, photo, phone, bio } = user;
@@ -113,10 +116,10 @@ const loginUser = asyncHandler(async (req, res) => {
 const logout = asyncHandler(async (req, res) => {
   res.cookie("token", "", {
     path: "/",
-    httpOnly: true,
+    /* httpOnly: true, */
     expires: new Date(0),
-    sameSite: "none",
-    secure: true,
+    /* sameSite: "none", */
+    secure: false,
   });
   return res.status(200).json({ message: "Successfully Logged Out" });
 });
@@ -140,8 +143,9 @@ const getUser = asyncHandler(async (req, res) => {
   }
 });
 
-const loginStatus = asyncHandler(async (req, res) => {
+const loginStatus = asyncHandler(async (req, res, next) => {
   const token = req.cookies.token;
+  console.log(token);
   if (!token) return res.json(false);
 
   //Verify Token
