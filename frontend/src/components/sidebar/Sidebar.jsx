@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HiMenuAlt3 } from 'react-icons/hi';
-import { RiProductHuntLine } from 'react-icons/ri';
+import { MdOutlineInventory2 } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import menu from '../../data/sidebar';
 import './Sidebar.scss';
@@ -20,7 +20,7 @@ const Sidebar = ({ children }) => {
       <div className="sidebar" style={{ width: isOpen ? '230px' : '60px' }}>
         <div className="top_section">
           <div className="logo" style={{ display: isOpen ? 'block' : 'none' }}>
-            <RiProductHuntLine
+            <MdOutlineInventory2
               size={35}
               style={{ cursor: 'pointer' }}
               onClick={goHome}
@@ -29,7 +29,7 @@ const Sidebar = ({ children }) => {
 
           <div
             className="bars"
-            style={{ marginLeft: isOpen ? '100px' : '0px' }}
+            style={{ marginLeft: isOpen ? '130px' : '0px' }}
           >
             <HiMenuAlt3 onClick={toggle} />
           </div>

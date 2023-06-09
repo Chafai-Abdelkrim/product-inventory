@@ -20,6 +20,11 @@
   --color-primary: #007bff;
   --color-success: #28a745;
   --color-danger: orangered;
+
+  --clr-cornflower-blue: #5867F8;
+  --clr-gallery: #EEECEC;
+  --clr-pickle-bluewood: #2E3553;
+  --clr-java: #1CBCAA;
 }
 
 * {
@@ -35,7 +40,7 @@ html {
 
 body {
   font-family: var(--font-family);
-  background: #eee;
+  background: #fff;
 }
 
 section {

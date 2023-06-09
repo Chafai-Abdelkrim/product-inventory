@@ -14,9 +14,9 @@ main {
   width: 230px;
   height: 100vh;
   flex-shrink: 0;
-  background-color: var(--color-white);
+  background-color: var(--clr-gallery);
   overflow: auto;
-  color: var(--color-dark);
+  color: var(--clr-pickle-bluewood);
   transition: all 0.5s;
 }
 
@@ -24,19 +24,20 @@ main {
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  background-color: var(--dark-blue);
+  background-color: var(--clr-cornflower-blue);
   height: 70px;
   transition: all 0.5s;
 }
 
 .logo {
+  height: 35px;
   font-size: 30px;
   color: var(--color-white);
 }
 
 .bars {
   display: flex;
-  font-size: 25px;
+  font-size: 30px;
   margin-left: 70px;
   cursor: pointer;
   color: var(--color-white);
@@ -44,8 +45,8 @@ main {
 }
 
 .bars:hover {
-  color: var(--color-primary);
-  font-size: 27px;
+  color: var(--clr-java);
+  font-size: 33px;
 }
 
 .sidebar-item {
@@ -56,7 +57,7 @@ main {
 }
 
 .sidebar-item:hover {
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .s-parent {
@@ -113,7 +114,7 @@ main {
 }
 
 .s-child:hover {
-  border: 1px solid var(--light-blue);
+  border: 1px solid var(--clr-java);
 }
 
 a {
@@ -123,12 +124,12 @@ a {
 }
 
 .active {
-  color: var(--color-primary);
+  color: var(--clr-java);
   display: block;
   position: relative;
   width: 100%;
   height: auto;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .active::after {
@@ -138,7 +139,7 @@ a {
   height: 100%;
   right: 0;
   top: 0;
-  background-color: var(--light-blue);
+  background-color: var(--clr-java);
 }
 
 .sublink .sidebar-item .sidebar-title {
