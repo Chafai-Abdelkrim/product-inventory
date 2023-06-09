@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineEye } from 'react-icons/ai';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 import {
   FILTER_PRODUCTS,
   selectFilteredProducts,
@@ -47,7 +47,6 @@ const ProductList = ({ products, isLoading }) => {
         },
         {
           label: 'Cancel',
-          //onClick: () => alert('Click No)
         },
       ],
     });
@@ -131,18 +130,17 @@ const ProductList = ({ products, isLoading }) => {
                       <td className="icons">
                         <span>
                           <Link to={`/product-detail/${_id}`}>
-                            <AiOutlineEye size={25} color={'purple'} />
+                            <AiOutlineEye size={25} />
                           </Link>
                         </span>
                         <span>
                           <Link to={`/edit-product/${_id}`}>
-                            <AiOutlineEye size={20} color={'green'} />
+                            <FaEdit size={20} />
                           </Link>
                         </span>
                         <span>
                           <FaTrashAlt
                             size={20}
-                            color={'red'}
                             onClick={() => confirmDelete(_id)}
                           />
                         </span>

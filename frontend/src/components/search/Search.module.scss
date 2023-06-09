@@ -19,7 +19,10 @@
     margin: 1rem auto;
     width: 100%;
     border: 1px solid #777;
-    border-radius: 3px;
+    border-radius: 1rem;
     outline: none;
+  }
+  input[type='text']:focus {
+    border: 1px solid var(--clr-java);
   }
 }
