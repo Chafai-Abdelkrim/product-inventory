@@ -193,6 +193,9 @@ p {
 }
 
 /* Text Color */
+.--color-java {
+  color: var(--clr-java);
+}
 .--text-light {
   color: #fff;
 }
@@ -334,6 +337,10 @@ p {
 .--btn-danger {
   color: #fff;
   background: orangered;
+}
+.--btn-java {
+  color: #fff;
+  background: var(--clr-java);
 }
 
 .--btn-success {
