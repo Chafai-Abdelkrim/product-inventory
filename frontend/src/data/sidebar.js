@@ -4,7 +4,7 @@ import { BiImageAdd } from 'react-icons/bi';
 
 const menu = [
   {
-    title: 'Dachboard',
+    title: 'Dashboard',
     icon: <FaTh />,
     path: '/dashboard',
   },
