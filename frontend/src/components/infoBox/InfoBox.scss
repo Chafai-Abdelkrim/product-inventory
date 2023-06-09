@@ -9,24 +9,27 @@
   align-items: center;
   vertical-align: middle;
   flex-wrap: wrap;
-  color: #fff;
+  color: var(--clr-pickle-bluewood);
+  border-radius: 100vmax;
   transform: translateY(0);
   transition: all 0.3s;
 
-  // background-color: green;
 
   &:hover {
     cursor: pointer;
-    // border: 3px solid #fff;
     transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
   }
 
   .info-icon {
     padding: 0 2rem;
-    color: #fff;
+
+    svg {
+      color: var(--clr-cornflower-blue) !important;
+    }
   }
   .info-text > * {
-    color: #fff;
+    color: var(--clr-pickle-bluewood);
   }
 
 }
