@@ -1,5 +1,5 @@
 .home {
-  background-color: #030b6b;
+  background-color: #1f1f1f;
   min-height: 100vh;
 
   & nav {
@@ -7,6 +7,7 @@
     padding-bottom: 1.5rem;
     color: #fff;
     & > .logo {
+      display: flex;
       color: #fff;
     }
   }
@@ -29,6 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10rem;
 }
 
 .hero-text {
