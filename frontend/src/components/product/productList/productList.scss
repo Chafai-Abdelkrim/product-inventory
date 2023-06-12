@@ -80,5 +80,13 @@
         border-bottom: 1px solid #ccc;
       }
     }
+
+    .pagination .selected a {
+      background-color: var(--clr-cornflower-blue);
+      color: #fff;
+    }
+    .pagination li:hover a {
+      background-color: var(--clr-cornflower-blue);
+    }
   }
 }
