@@ -21,10 +21,10 @@
   --color-success: #28a745;
   --color-danger: orangered;
 
-  --clr-cornflower-blue: #5867F8;
-  --clr-gallery: #EEECEC;
-  --clr-pickle-bluewood: #2E3553;
-  --clr-java: #1CBCAA;
+  --clr-cornflower-blue: #5867f8;
+  --clr-gallery: #eeecec;
+  --clr-pickle-bluewood: #2e3553;
+  --clr-java: #1cbcaa;
 }
 
 * {
@@ -302,10 +302,10 @@ p {
 .--btn {
   font-size: 1.6rem;
   font-weight: 400;
-  padding: 6px 8px;
-  margin: 0 5px 0 0;
+  padding: 8px 10px;
+  margin: 1rem 0;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 1rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -314,7 +314,8 @@ p {
 }
 
 .--btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .--btn-lg {
@@ -327,7 +328,7 @@ p {
 
 .--btn-primary {
   color: #fff;
-  background: #007bff;
+  background: var(--clr-cornflower-blue);
 }
 .--btn-secondary {
   color: #fff;
@@ -488,7 +489,7 @@ a:hover {
 .pagination .page-num {
   padding: 5px 10px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 1rem;
   font-weight: normal;
   color: #333;
   border: 1px solid #333;
@@ -497,11 +498,9 @@ a:hover {
 
 .pagination .page-num:hover {
   color: #fff;
-  background-color: var(--light-blue);
 }
 .activePage {
   color: #fff;
-  background-color: var(--light-blue);
   height: 100%;
 }
 
