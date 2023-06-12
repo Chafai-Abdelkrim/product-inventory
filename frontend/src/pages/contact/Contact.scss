@@ -1,4 +1,9 @@
 .contact {
+  .section {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+  }
   .card {
     padding: 1rem;
     border: 1px solid #ccc;
@@ -6,7 +11,7 @@
 
   .card2 {
     padding: 2rem;
-    background-color: var(--light-blue);
+    background-color: var(--clr-pickle-bluewood);
     color: #fff;
     h3,
     p {
@@ -41,22 +46,37 @@
         font-size: 1.4rem;
         font-weight: 500;
       }
+
       input[type='text'],
-      input[type='number'],
-      input[type='file'],
-      input[type='email'],
-      select,
-      textarea,
-      input[type='password'] {
+      textarea {
         display: block;
         font-size: 1.6rem;
         font-weight: 300;
-        padding: 1rem;
-        margin: 1rem auto;
+        padding: 8px 14px;
+        margin: 0.5rem auto;
         width: 100%;
-        border: 1px solid #777;
-        border-radius: 3px;
+        border: none !important;
+        border-radius: 10px;
         outline: none;
+        transition: all 0.3s, transform 0.2s;
+      }
+
+      input[type='text']:hover,
+      textarea:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      }
+
+      input[type='text']:focus,
+      textarea:focus {
+        border: 1px solid var(--clr-java) !important;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      }
+
+      input[type='text']:active,
+      textarea:active {
+        transform: scale(0.975);
       }
     }
   }
