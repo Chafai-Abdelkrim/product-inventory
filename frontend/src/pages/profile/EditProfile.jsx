@@ -107,7 +107,7 @@ const EditProfile = () => {
             </p>
             <p>
               <label>Email:</label>
-              <input type="text" name="email" value={profile?.name} disabled />
+              <input type="email" name="email" value={email} disabled />
               <br />
               <code>Email cannot be changed.</code>
             </p>
