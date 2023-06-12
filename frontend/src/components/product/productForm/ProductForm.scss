@@ -1,9 +1,10 @@
 .add-product {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   .card {
     width: 100%;
-    max-width: 500px;
-    padding: 1rem;
+    max-width: 700px;
+    padding: 2rem;
+    margin-inline: auto;
   }
   form {
     label {
@@ -21,12 +22,44 @@
       display: block;
       font-size: 1.6rem;
       font-weight: 300;
-      padding: 1rem;
+      padding: 8px 14px;
       margin: 1rem auto;
       width: 100%;
-      border: 1px solid #777;
-      border-radius: 3px;
+      border: none;
+      border-radius: 10px;
       outline: none;
+      transition: all 0.3s, transform 0.2s;
+    }
+
+    input[type='text']:hover,
+    input[type='number']:hover,
+    input[type='email']:hover,
+    select:hover,
+    input[type='password']:hover {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    input[type='file']:hover {
+      cursor: pointer;
+    }
+
+    input[type='text']:focus,
+    input[type='number']:focus,
+    input[type='email']:focus,
+    select:focus,
+    input[type='password']:focus {
+      border: 1px solid var(--clr-java);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    input[type='text']:active,
+    input[type='number']:active,
+    input[type='email']:active,
+    select:active,
+    input[type='password']:active {
+      transform: scale(0.975);
     }
   }
 }
@@ -34,6 +67,7 @@
 .group {
   border: 1px solid var(--dark-blue);
   padding: 5px;
+  margin-bottom: 1.8rem;
 }
 
 .image-preview {
