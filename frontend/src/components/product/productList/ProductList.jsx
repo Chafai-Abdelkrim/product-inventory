@@ -7,6 +7,7 @@ import {
   selectFilteredProducts,
 } from '../../../redux/features/product/filterSlice';
 import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import ReactPaginate from 'react-paginate';
 import {
   deleteProduct,
