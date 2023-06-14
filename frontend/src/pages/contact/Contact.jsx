@@ -18,7 +18,10 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/contactus`, data);
+      const response = await axios.post(`${BACKEND_URL}/api/contactus`, data, {
+        headers: { 'Content-Type': 'application/json' },
+        withCredentials: true,
+      });
       setSubject('');
       setMessage('');
       toast.success(response.data.message);
