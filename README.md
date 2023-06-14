@@ -12,7 +12,7 @@
 	<h3> 👇 Check It Out 👇 </h3>
 </div>
 
-[<img alt="screenShot of site" width="900px" src="./readme-assets/website-screenshot.png" />](https://chafai-abdelkrim.github.io/)
+[<img alt="screenShot of site" width="900px" src="./readme-assets/website-screenshot.png" />](https://product-inventory-sigma.vercel.app/)
 
 ## 📝 Description
 
